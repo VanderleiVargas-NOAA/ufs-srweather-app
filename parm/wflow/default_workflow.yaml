@@ -10,6 +10,7 @@ rocoto:
     FCST_DIR: '{% if user.RUN_ENVIR == "nco" %}{{"{}/run_fcst_mem#mem#.{}_@Y@m@d@H".format(nco.DATAROOT_default,workflow.WORKFLOW_ID)}}{% else %}{{"{}/@Y@m@d@H".format(workflow.EXPTDIR)}}{% endif %}'
     GLOBAL_VAR_DEFNS_FP: '{{ workflow.GLOBAL_VAR_DEFNS_FP }}'
     JOBSdir: '{{ user.JOBSdir }}'
+    HOMEdir: '{{ user.HOMEdir}}'
     LOAD_MODULES_RUN_TASK_FP: '{{ workflow.LOAD_MODULES_RUN_TASK_FP }}'
     LOGDIR: '{% if user.RUN_ENVIR == "nco" %}{{"{}/@Y@m@d".format(nco.LOGBASEDIR_default)}}{% else %}{{nco.LOGBASEDIR_default }}{% endif %}'
     LOGEXT: '{% if user.RUN_ENVIR == "nco" %}{{".{}.log".format(workflow.WORKFLOW_ID)}}{% else %}{{".log"}}{% endif %}'
